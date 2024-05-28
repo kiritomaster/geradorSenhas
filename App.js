@@ -24,7 +24,7 @@ export default function App() {
    return (
     <View style={styles.container}>
       <Image
-      source = {require("../../assets/images/react-logo.png")}
+      source = {require("./assets/react.png")}
       style={styles.logo}
       />
       <Text style={styles.title}>Mega Encrypt</Text>
