@@ -1,78 +1,69 @@
 import {useState} from 'react'
-import { StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity, Image, Pressable} from 'react-native'
 import Slider from '@react-native-community/slider'
-/*import {ModalSenha} src='src/ModalSenha'*/
+import * as clipboard from 'expo-clipboard'
 
-let alfabeto = "abcdefghijklmnopqrstuvxywzABDEFGHIJKLMNOPQRSTUVXYWZ0123456789!@#$%¨&*()";
+
+
+
 
 
 export default function App() {
 
-  const [size, setSize] = useState(10)
-  const [senha, setSenha] = useState("")
+  
 
-  function gerasenha(){
-    let senha = "";
-    for(i=0,n=alfabeto.length;i<size;i++){
-    senha += alfabeto.charAt(Math.floor(Math.random() * n))
-    }
-    setSenha(senha)
-   }
+    
    
 
 
    return (
     <View style={styles.container}>
-      <Image
-      source = {require("./assets/react.png")}
-      style={styles.logo}
-      />
-      <Text style={styles.title}>Mega Encrypt</Text>
-      <Text style={styles.title2}> {size} caracteres</Text>
       <View style={styles.area}>
-        <Slider style={styles.area}
-        minimumValue={6}
-        maximumValue={20}
-        maximumTrackTintColor="#FF0000"
-        minimumTrackTintColor="#0F0"
-        thumbTintColor="#00F"
-        onValueChange={(valor) => setSize(valor.toFixed(0))}
-        />
-      </View>
-      <TouchableOpacity style={styles.button} onPress={gerasenha}>
-      <Text style={styles.textButton}>Gerar Senha</Text>
-      </TouchableOpacity>
+        <Text style={styles.texto}>
+            Senha gerada
+        </Text>
+        <Pressable style={styles.mostrasenha}>
+            <Text style={styles.textoSenha}>
+                {pass} */exibi a senha/*
+            </Text>
+        </Pressable>
+        <View style={styles.}
+        </View>
     </View>
+
  )}
    
  const styles = StyleSheet.create({
   container:{
   flex:1,
-  backgroundColor: "#777",
+  backgroundColor: "rgba(24,24,24,0.6)"/*o termo a refere-se a opacidade */,
   justifyContent: 'center',
   alignItems: 'center'
   },
   logo:{
   marginBottom: 15
   },
-  title:{
-    fontSize: 40,
+  texto:{
+    fontSize: 25,
     backgroundColor: "#2F8",
-    padding:10,
-    borderRadius: 13
+    fontWeight:'bold',
+    fontFamily:'Roboto'
     },
-    title2:{
-    fontSize:30,
-    marginTop:14
+    mostrasenha:{
+        backgroundColor: "#2F8",
+        fontWeight:'bold',
+        fontFamily:'Roboto'
     },
     area:{
       marginTop: 14,
+      justifyContent:'center',
       marginBottom:14,
       width: '70%',
       alignItems: 'center',
       backgroundColor:"#FFF",
+      paddingBotton: 28,
       borderRadius:5,
-      padding: 8
+      paddingTop: 24
       },
       area:{
         marginTop: 14,
@@ -92,6 +83,30 @@ export default function App() {
           borderRadius:5,
           padding: 8
           },
+          textoSenha:[
+            color:'#FFF'
+          ],
+          areaBotoes:{
+            flexDirection:'row',
+            width:'90%',
+            padding:'8',
+            alignItems:'center',
+            justifyContent:'space-between'
+        
+          },
+          
+          butoes:{
+            backgroundColor:"#4b4",
+            borderRadius:8,
+            alignItems: 'center',
+            padding:6,
+            margin:5,
+            alignItems:'center'
+            },
+            textoBotoes:{
+            fontSize: 18,
+            color: "#222"
+           },
           button:{
             backgroundColor:"#FFF",
             borderRadius:15,
@@ -104,7 +119,6 @@ export default function App() {
             textButton:{
             fontSize: 24,
             color: "#000"
-           
            }
            }) 
    
