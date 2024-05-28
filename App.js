@@ -2,7 +2,7 @@ import {useState} from 'react'
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Slider from '@react-native-community/slider';
 
-let alfabeto = "abcdefghijklmnopqrstuvxywzABDEFGHIJKLMNOPQRSTUVXYWZ0123456789!@#$%¨&*()"
+let alfabeto = "abcdefghijklmnopqrstuvxywzABDEFGHIJKLMNOPQRSTUVXYWZ0123456789!@#$%¨&*()";
 
 
 export default function App() {
@@ -24,20 +24,22 @@ function gerasenha(){
     <View style={styles.container}>
       <Text style={styles.title}>Gerador de Senhas</Text>
       <Text> {size} caracteres </Text>
-        <slider 
+      <slider 
           mininumValue = {6}
           maxinumValue = {20}
           maxinumTrackinTintColor = "#F00"
           mininumTrackinTintColor = "#0F0"
-
-        <TouchableOpacity onPress={gerasenha}>
+      >
+        
+      </slider>
+        <TouchableOpacity onPress={gerasenha()}>
         <Text>
           Gerar Senha
         </Text>
       </TouchableOpacity>
     </View>
  
-  );
+  )
 }
 
 const styles = StyleSheet.create({
